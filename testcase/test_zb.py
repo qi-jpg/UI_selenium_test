@@ -3,9 +3,18 @@ import unittest
 from selenium import webdriver
 import sys
 sys.path.append("/Users/maimai/Desktop/UI_selenium_test/normal/")
-from zhibo import zhiboPage
+import zhibo
+
 from ddt import ddt,data,unpack
 import time
+'''
+import sys
+import os
+cur_directory = os.path.dirname(os.path.dirname(__file__))
+root_path = os.path.abspath(os.path.dirname(cur_directory)+os.path.sep+".")
+sys.path.append(root_path)
+from normal.zhibo import zhiboPage
+'''
 
 @ddt
 class TestZhiBo(unittest.TestCase):
@@ -19,14 +28,14 @@ class TestZhiBo(unittest.TestCase):
            'pic_url':"/Users/maimai/Desktop/mamen.png",'zhibo_fwb':'这里是富文本','zhibo_status':'.self-footer>.nb-button-wrapper:nth-child(2)'})
     @unpack
     def test_insertzhibo(self,fenlei,fenlei_child,zhibo_title,zhibo_sub,pic_url,zhibo_fwb,zhibo_status):
-        zb = zhiboPage(self.driver)
+        zb = zhibo.zhiboPage(self.driver)
         zb.insertzhibo(fenlei,fenlei_child,zhibo_title,zhibo_sub,pic_url,zhibo_fwb,zhibo_status)
         text = zb.detailzb()
         print(text)
         self.assertEqual("直播标题",text)
 
     def test_fabuzhibo(self):
-        zb = zhiboPage(self.driver)
+        zb = zhibo.zhiboPage(self.driver)
 
 
 
