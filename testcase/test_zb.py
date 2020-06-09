@@ -1,3 +1,4 @@
+#coding=UTF-8
 import unittest
 from selenium import webdriver
 import sys
