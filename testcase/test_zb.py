@@ -2,18 +2,21 @@
 import unittest
 from selenium import webdriver
 import sys
-sys.path.append("/Users/maimai/Desktop/UI_selenium_test/normal/")
-import zhibo
+#sys.path.append("/Users/maimai/Desktop/UI_selenium_test/hy_normal/")
+#import zhibo
 
 from ddt import ddt,data,unpack
 import time
+
+from hy_normal import zhibo
+
 '''
 import sys
 import os
 cur_directory = os.path.dirname(os.path.dirname(__file__))
 root_path = os.path.abspath(os.path.dirname(cur_directory)+os.path.sep+".")
 sys.path.append(root_path)
-from normal.zhibo import zhiboPage
+from hy_normal.zhibo import zhiboPage
 '''
 
 @ddt
