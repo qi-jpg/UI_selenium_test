@@ -1,16 +1,13 @@
 #coding=UTF-8
 import unittest
 from selenium import webdriver
-import sys
-sys.path.append("/Users/maimai/Desktop/UI_selenium_test/hy_normal/")
+#import sys
+#sys.path.append("/Users/maimai/Desktop/UI_selenium_test/hy_normal/")
 #import zhibo
-
+from hy_normal.zhibo import zhiboPage
 from ddt import ddt, data, unpack, file_data
 import time
 
-#from hy_normal import zhibo
-from zhibo import zhiboPage
-from normal import Normal
 
 '''
 import sys
