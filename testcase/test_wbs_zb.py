@@ -32,8 +32,8 @@ class TestZhiBo(unittest.TestCase):
  #          'fxpz':'.el-radio:nth-child(2)>.el-radio__inner','now_time':now_time})
  #   @unpack
     #新增直播
-    @file_data('/Users/maimai/Desktop/UI_selenium_test/data/zb_insert.json')
-    @unittest.skip('跳过测试')
+    @file_data('../data/zb_insert.json')
+#    @unittest.skip('跳过测试')
     def test_insertzhibo(self,fenlei_child,zhibo_title,zhibo_sub,pic_url,zhibo_fwb,fxpz):
         zb = zhiboPage(self.driver)
         now_time=str(int(time.time()))
