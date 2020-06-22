@@ -1,8 +1,8 @@
 #coding=UTF-8
 import unittest
 from selenium import webdriver
-import sys
-sys.path.append("/Users/maimai/Desktop/UI_selenium_test/hy_normal/")
+#import sys
+#sys.path.append("/Users/maimai/Desktop/UI_selenium_test/hy_normal/")
 import zhibo
 import normal
 
