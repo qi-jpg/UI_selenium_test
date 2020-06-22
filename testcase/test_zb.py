@@ -3,9 +3,10 @@ import unittest
 from selenium import webdriver
 #import sys
 #sys.path.append("/Users/maimai/Desktop/UI_selenium_test/hy_normal/")
-import zhibo
-import normal
-
+#import zhibo
+#import normal
+from hy_normal import zhibo
+from hy_normal import normal
 from ddt import ddt,data,unpack
 import time
 '''

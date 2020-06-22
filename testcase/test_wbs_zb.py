@@ -36,6 +36,7 @@ class TestZhiBo(unittest.TestCase):
  #   @unpack
     #新增直播
     @file_data('/Users/maimai/Desktop/UI_selenium_test/data/zb_insert.json')
+    @unittest.skip('跳过测试')
     def test_insertzhibo(self,fenlei_child,zhibo_title,zhibo_sub,pic_url,zhibo_fwb,fxpz):
         zb = zhiboPage(self.driver)
         now_time=str(int(time.time()))
@@ -46,7 +47,7 @@ class TestZhiBo(unittest.TestCase):
 
 
     #发布直播
-    @unittest.skip('跳过测试')
+#    @unittest.skip('跳过测试')
     def test_fabuzhibo(self):
         zb = zhiboPage(self.driver)
         zb.fabuzb()
@@ -58,7 +59,7 @@ class TestZhiBo(unittest.TestCase):
         self.assertEqual(weifabu,text)
 
     #撤销发布直播
-    @unittest.skip('跳过测试')
+#    @unittest.skip('跳过测试')
     def test_cxfabuzhibo(self):
         zb = zhiboPage(self.driver)
         zb.cxfabuzb()
@@ -90,8 +91,8 @@ class TestZhiBo(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        pass
- #       cls.driver.quit()
+ #       pass
+        cls.driver.quit()
 
 
 
