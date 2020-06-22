@@ -1,0 +1,11 @@
+{
+  "case1": {
+    "fenlei_child":"[x-placement=\"bottom-start\"]>div>.el-select-dropdown__wrap>ul>li:nth-child(2)",
+    "zhibo_title":"直播标题",
+    "zhibo_sub":"直播简介",
+    "pic_url":"/Users/maimai/Desktop/mamen.png",
+    "zhibo_fwb":"这里是富文本",
+    "fxpz":"禁用"
+
+  }
+}

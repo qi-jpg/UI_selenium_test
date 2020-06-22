@@ -2,14 +2,16 @@
 import unittest
 from selenium import webdriver
 import sys
-#sys.path.append("/Users/maimai/Desktop/UI_selenium_test/hy_normal/")
-#import zhibo
+sys.path.append("/Users/maimai/Desktop/UI_selenium_test/hy_normal/")
+import zhibo
+import normal
 
 from ddt import ddt,data,unpack
 import time
-
-from hy_normal import zhibo
-
+'''
+import zhibo
+import normal
+'''
 '''
 import sys
 import os
@@ -25,14 +27,16 @@ class TestZhiBo(unittest.TestCase):
     @classmethod  #不需要实例化
     def setUpClass(cls):
         cls.driver = webdriver.Chrome()
+        normal.login()
 
     now_time=str(int(time.time()))
     @data({"fenlei":'.el-select:first-child','fenlei_child':'.el-select-dropdown__item:nth-child(6)','zhibo_title':'直播标题'+now_time,'zhibo_sub':'直播简介',
-           'pic_url':"/Users/maimai/Desktop/mamen.png",'zhibo_fwb':'这里是富文本','zhibo_status':'.self-footer>.nb-button-wrapper:nth-child(2)'})
+           'pic_url':"/Users/maimai/Desktop/mamen.png",'zhibo_fwb':'这里是富文本','zhibo_status':'.self-footer>.nb-button-wrapper:nth-child(2)','fxpz':'.el-radio:nth-child(2)>.el-radio__inner'})
     @unpack
-    def test_insertzhibo(self,fenlei,fenlei_child,zhibo_title,zhibo_sub,pic_url,zhibo_fwb,zhibo_status):
+    def test_insertzhibo(self,fenlei,fenlei_child,zhibo_title,zhibo_sub,pic_url,zhibo_fwb,zhibo_status,fxpz):
+
         zb = zhibo.zhiboPage(self.driver)
-        zb.insertzhibo(fenlei,fenlei_child,zhibo_title,zhibo_sub,pic_url,zhibo_fwb,zhibo_status)
+        zb.insertzhibo(fenlei,fenlei_child,zhibo_title,zhibo_sub,pic_url,zhibo_fwb,zhibo_status,fxpz)
         text = zb.detailzb()
         print(text)
         self.assertEqual("直播标题",text)
@@ -44,7 +48,8 @@ class TestZhiBo(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        cls.driver.quit()
+        pass
+#        cls.driver.quit()
 
 
 

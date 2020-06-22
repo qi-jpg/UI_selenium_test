@@ -49,4 +49,5 @@ class BasePage:
     #执行点击事件
     def click(self):
         self.driver.click()
-        time.sleep(2)
+        self.driver.implicitly_wait(10)
+
